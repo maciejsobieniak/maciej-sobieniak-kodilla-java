@@ -9,9 +9,12 @@ import java.util.List;
 
 public class CollectionTestSuite {
 
+    private static int testCounter = 0;
+
     @BeforeEach
     public void before() {
-        System.out.println("Test Case: begin");
+        testCounter++;
+        System.out.println("Execute test number: " + testCounter);
     }
 
     @AfterEach
