@@ -32,6 +32,7 @@ class BookDirectoryTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
+
     @Mock
     private LibraryDatabase libraryDatabaseMock;
 
