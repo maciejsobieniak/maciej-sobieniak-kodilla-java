@@ -73,6 +73,29 @@ public class BoardTestSuite {
     }
 
     /**
+     * Method to calculate average time of tasks in progress
+     */
+
+    @Test
+    @DisplayName("Test to calculate average time of tasks in progress")
+    void testAddTaskListAverageWorkingOnTask() {
+        //Given
+        Board project = prepareTestData();
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        var averageDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(Task::getCreated)
+                .mapToLong(d -> (LocalDate.now().toEpochDay()) - d.toEpochDay())
+                .average().orElse(0.0);
+
+        //Then
+        assertEquals(10, averageDays);
+    }
+
+    /**
      * another version of the last test using count() method
      */
 
