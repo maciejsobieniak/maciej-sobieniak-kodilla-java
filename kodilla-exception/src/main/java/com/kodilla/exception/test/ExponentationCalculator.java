@@ -36,6 +36,7 @@ public class ExponentationCalculator {
         return a * exponentation(a, b - 1);
     }
 
+
     public static void main(String[] args) {
         ExponentationCalculator calculator = new ExponentationCalculator();
 

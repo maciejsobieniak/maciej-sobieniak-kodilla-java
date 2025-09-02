@@ -3,6 +3,10 @@ import java.util.stream.IntStream;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/*
+    Class ReverseString includes method reverse(String text) which reverses the input string using streams.
+    The method throws NullPointerException when the input text is null.
+*/
 public class ReverseString {
     public String reverse(String text) throws NullPointerException {
         if (text == null) {
