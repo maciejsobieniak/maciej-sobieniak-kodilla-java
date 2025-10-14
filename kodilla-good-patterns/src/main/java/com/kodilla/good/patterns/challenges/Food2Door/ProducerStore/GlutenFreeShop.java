@@ -1,0 +1,24 @@
+package com.kodilla.good.patterns.challenges.Food2Door.ProducerStore;
+
+import com.kodilla.good.patterns.challenges.Food2Door.Producer;
+import com.kodilla.good.patterns.challenges.Food2Door.Product;
+import com.kodilla.good.patterns.challenges.Food2Door.ProcessResult;
+
+public class GlutenFreeShop implements Producer {
+
+    private String producerName;
+
+    public GlutenFreeShop(String producerName) {
+        this.producerName = producerName;
+    }
+
+    public String getProducerName() {
+        return producerName;
+    }
+
+    @Override
+    public ProcessResult process(Product product, int quantity) {
+        String message = "GlutenFreeShop: Order for " + quantity + " of " + product.getProductName() + " has been processed.";
+        return new ProcessResult(true, message);
+    }
+}
