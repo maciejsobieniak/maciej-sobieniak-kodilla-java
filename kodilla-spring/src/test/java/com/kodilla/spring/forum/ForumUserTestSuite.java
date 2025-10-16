@@ -1,7 +1,5 @@
 package com.kodilla.spring.forum;
 
-import com.kodilla.spring.shape.Circle;
-import com.kodilla.spring.shape.Shape;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
