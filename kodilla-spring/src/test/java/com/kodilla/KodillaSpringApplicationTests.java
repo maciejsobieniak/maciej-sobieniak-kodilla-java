@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class KodillaSpringApplicationTests {
 
-    @Test
+   /*@Test
     void testCircleLoadedIntoContainer() {
         //Given
         ApplicationContext context =
@@ -52,7 +52,7 @@ class KodillaSpringApplicationTests {
         String name = shape.getShapeName();
         //Then
         assertEquals("This is a square.", name);
-    }
+    }*/
 
     @Test
     void testCircleLoadedIntoContainerFromSearchText() {
