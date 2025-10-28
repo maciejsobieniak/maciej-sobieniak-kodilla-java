@@ -1,0 +1,40 @@
+CREATE TABLE ISSUESLISTS (
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(255) NOT NULL
+    );
+
+CREATE TABLE ISSUES
+(
+    ID               SERIAL PRIMARY KEY,
+    ISSUESLIST_ID    BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS (ID),
+    TITLE            VARCHAR(255),
+    DESCRIPTION      TEXT,
+    USER_ID_ASSIGNED BIGINT UNSIGNED,
+    FOREIGN KEY (USER_ID_ASSIGNED) REFERENCES USERS (ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("In Progress");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("Done");
+
+COMMIT;
+
+INSERT INTO ISSUES (ISSUESLIST_ID, TITLE, DESCRIPTION, USER_ID_ASSIGNED) VALUES
+(1, 'Implement login form', 'Create login form with validation and session handling.', 1),
+(1, 'Design database schema', 'Prepare normalized SQL schema for users, issues, and lists.', 2),
+(1, 'Create registration page', 'Add new user registration functionality with email confirmation.', 3),
+(2, 'Fix broken link on homepage', 'The “Contact us” link redirects to a 404 page. Fix URL in footer.', 1),
+(2, 'Refactor Board class', 'Simplify logic and improve readability in Board.java.', 4),
+(2, 'Update API documentation', 'Ensure all endpoints are properly documented in Swagger.', 5),
+(3, 'Deploy to production', 'Push the current version to the live server and verify environment variables.', 2),
+(3, 'Add password reset feature', 'Implement password reset flow with token verification.', 3),
+(3, 'Optimize database queries', 'Reduce query time by adding necessary indexes and optimizing joins.', 4),
+(3, 'Create unit tests for Game class', 'Add comprehensive JUnit tests covering all public methods.', 5);
+
+COMMIT;
