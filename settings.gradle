@@ -9,3 +9,4 @@ include 'kodilla-spring-boot'
 include 'kodilla-spring-web'
 
 include 'kodilla-jdbc'
+include 'kodilla-hibernate'
